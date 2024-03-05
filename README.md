@@ -15,7 +15,7 @@ A literal interpretation of this theme involves the abnormal outcome of somethin
 Making games as XedWires during this Jam.
 
 ## Ideas
--You are the abberation - The player has tentacles that read out and kill all those around. Something Akin to Vampire Survivors.
+- You are the abberation - The player has tentacles that read out and kill all those around. Something Akin to Vampire Survivors.
 
 Gameplay Loop: 
 
