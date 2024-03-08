@@ -1,9 +1,10 @@
-#include "Vec2.h"
+#include "vec2.h"
+#include <cmath>
 
 Vec2::Vec2() {}
 Vec2::Vec2(float xin, float yin) : x(xin), y(yin) {}
 
-const Vec2 Vec2::operator + (const Vec2 & other) {
+const Vec2 Vec2::operator + (const Vec2 & other) const {
   return Vec2(x + other.x, y + other.y);
 }
 
@@ -20,7 +21,7 @@ const float Vec2::length() const {
 }
 
 const float Vec2::distance(const Vec2 & other) const {
-  return (other - *this).length();
+  return (other - (*this)).length();
 }
 
 

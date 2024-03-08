@@ -8,7 +8,7 @@
 #include <SFML/Window/Keyboard.hpp>
 
 #include "vec2.h"
-
+#include "easing.h"
 
 
 
@@ -21,6 +21,7 @@ class IkChain {
 
 
 int main() {
+  float t = 0.0001;
   sf::RenderWindow window(sf::VideoMode(640, 480), "ImGui + SFML = <3");
   window.setFramerateLimit(60);
   ImGui::SFML::Init(window);
@@ -40,15 +41,15 @@ int main() {
         window.close();
       }   
     }
-    
+    t += 0.001;
     ImGui::SFML::Update(window, deltaClock.restart());
     //ImGui::ShowDemoWindow();
 
     //ImGui::Begin("Hello, world!");
     //ImGui::Button("Look at this pretty button");
     //ImGui::End();
-        
-    testCircle.setPosition(position.x, position.y);
+    Vec2 currentPosition = Easing::lerp2D(position, Vec2(200,200), t);
+    testCircle.setPosition(currentPosition.x, currentPosition.y);
     window.clear();
     window.draw(testCircle);
     ImGui::SFML::Render(window);
